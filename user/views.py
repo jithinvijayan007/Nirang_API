@@ -17,9 +17,11 @@ def registration_view(request):
         if serializer.is_valid():
             account=serializer.save()
 
-            send_mail('Your account has been registered', 'Hai, account.username,
-            Thank you for registering in Nirang. ......... , 'donotreply@private.com', ['email'], fail_silently=False)
-            
+            send_mail('Your account has been registered', 'Hai,
+            account.username,
+            Thank you for registering in Nirang. ......... ,
+            'donotreply@private.com', ['email'], fail_silently=False)
+
             data['response'] = "succesfully registered"
             data['email']=account.email
             data['username']=account.username
