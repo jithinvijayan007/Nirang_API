@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',views.registration_view,name="register"),
     path('user/',include('user.urls')),
+    path('user/update/<int:pk>/',views.AccountDetail.as_view()),
 ]
